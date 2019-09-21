@@ -1,0 +1,5 @@
+[impala]
+impalad=un.hhi.co.kr:25003
+default_db=weather
+write_delimited=true
+#output_file=/home/hhiweather/shell_script/kudu-impala/queryResult_kudu-impala.csv

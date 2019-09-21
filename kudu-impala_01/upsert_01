@@ -1,0 +1,1 @@
+UPSERT INTO TABLE ${var:db_schema}.${var:db_weather_table_kudu_01} SELECT _timestamp, CAST(longitude as STRING) as longitude_pk, CAST(latitude as STRING) as latitude_pk, ST_SETSRID(ST_POINT(longitude, latitude), 4326) AS geom, longitude, latitude, u_current, v_current, water_temperature, air_temperature FROM ${var:db_schema}.${var:db_weather_table_temp_01}

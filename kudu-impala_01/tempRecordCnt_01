@@ -1,0 +1,1 @@
+SELECT COUNT(1) AS cnt FROM ${var:db_schema}.${var:db_weather_table_temp_01};

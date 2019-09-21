@@ -1,0 +1,31 @@
+CREATE TABLE ${var:db_schema}.${var:db_weather_table_kudu_renew}
+(
+	_timestamp STRING ENCODING PREFIX_ENCODING,
+	longitude_pk STRING,
+	latitude_pk STRING,
+	geom STRING,
+	longitude DOUBLE,
+	latitude DOUBLE,
+	u_wind DOUBLE,
+	v_wind DOUBLE,
+	wave_height DOUBLE,
+	wave_direction DOUBLE,
+	wave_period DOUBLE,
+	swell_height DOUBLE,
+	swell_direction DOUBLE,
+	swell_period DOUBLE,
+	ice_cover DOUBLE,
+	u_current DOUBLE,
+	v_current DOUBLE,
+	water_temperature DOUBLE,
+	pressure DOUBLE,
+	air_temperature DOUBLE,
+	PRIMARY KEY(_timestamp, longitude_pk, latitude_pk)
+)
+PARTITION BY HASH(longitude_pk, latitude_pk) PARTITIONS 20,
+RANGE(_timestamp)
+(
+	PARTITION '2019011100' <= VALUES < '2019012024',
+	PARTITION '2019012100' <= VALUES < '2019013124'
+)
+STORED AS KUDU

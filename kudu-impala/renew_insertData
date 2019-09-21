@@ -1,0 +1,1 @@
+INSERT INTO TABLE ${var:db_schema}.${var:db_weather_table_kudu_renew} SELECT * FROM ${var:db_schema}.${var:db_weather_table_kudu}

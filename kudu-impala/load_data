@@ -1,0 +1,1 @@
+LOAD DATA INPATH "${var:ingestion_zone_kudu}" OVERWRITE INTO TABLE ${var:db_schema}.${var:db_weather_table_temp};

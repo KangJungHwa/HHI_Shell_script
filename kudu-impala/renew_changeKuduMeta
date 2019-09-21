@@ -1,0 +1,1 @@
+ALTER TABLE ${var:db_schema}.${var:db_weather_table_kudu} SET TBLPROPERTIES ('kudu.table_name' = 'impala::${var:db_schema}.${var:db_weather_table_kudu}')
